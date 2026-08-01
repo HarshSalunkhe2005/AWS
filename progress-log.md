@@ -9,7 +9,7 @@
 - [x] Created AWS account
 - [x] Stage 1 — IAM: created a non-root IAM user with AdministratorAccess +
       generated a CLI access key pair
-- [ ] Stage 2 — Launch EC2 instance (t2.micro, backend host)
+- [x] Stage 2 — Launch EC2 instance (Ubuntu 26.04 LTS, t3.micro, `retail-agentic-ai-backend`)
 - [ ] Stage 3 — Security Groups (firewall rules for the instance)
 - [ ] Stage 4 — SSH in, deploy backend (Python, systemd service, Nginx reverse proxy)
 - [ ] Stage 5 — S3 + CloudFront for the frontend
