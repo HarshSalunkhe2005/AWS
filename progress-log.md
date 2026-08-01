@@ -12,7 +12,10 @@
 - [x] Stage 2 — Launch EC2 instance (Ubuntu 26.04 LTS, t3.micro, `retail-agentic-ai-backend`)
 - [x] Stage 3 — Security Groups (opened HTTP/80 publicly, 8000 temp for testing, SSH stayed IP-locked)
 - [x] Stage 4a — SSH access confirmed (Windows PowerShell + OpenSSH, icacls instead of chmod)
-- [ ] Stage 4b — deploy backend on the instance (Python, systemd service, Nginx reverse proxy)
+- [x] Stage 4b (part 1) — backend running as a systemd service (`retail-backend`),
+      confirmed reachable at `http://<public-ip>:8000/health` → `{"status":"ok"}`
+- [ ] Stage 4b (part 2) — Nginx reverse proxy (80 → 8000), so port 8000 doesn't
+      need to stay open publicly
 - [ ] Stage 5 — S3 + CloudFront for the frontend
 - [ ] Stage 6 — Wire frontend/backend together (CORS, env vars), final test
 - [ ] Fill in the Task 1 tracking sheet (problem statement, platform, hosting link)
