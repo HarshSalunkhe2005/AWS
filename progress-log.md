@@ -17,10 +17,15 @@
 - [x] Stage 4b (part 2) — Nginx reverse proxy configured (80 → 127.0.0.1:8000),
       confirmed `http://<public-ip>/health` works without `:8000`; port 8000
       closed in the Security Group afterward (Nginx is now the only public entry)
-- [ ] Stage 5 — S3 + CloudFront for the frontend
-- [ ] Stage 6 — Wire frontend/backend together (CORS, env vars), final test
+- [x] Stage 5 — S3 static website hosting for the frontend (skipped CloudFront —
+      would need HTTPS on the backend too, mixed-content issue; plain S3+HTTP
+      matches the backend and was the pragmatic call given the deadline)
+- [x] Stage 6 — CORS locked to the S3 origin, backend service restarted, full
+      end-to-end test done in-browser with a real dataset upload — works
+- [x] Task 1 deployment complete. Full writeup + screenshots in
+      `Task 1 PPT contents/`
 - [ ] Fill in the Task 1 tracking sheet (problem statement, platform, hosting link)
-- [ ] Build Task 1 section of the PPT
+- [ ] Build Task 1 section of the PPT (content ready in `Task 1 PPT contents/`)
 
 ## Task 2 — Multi-VM Virtualized Environment
 
