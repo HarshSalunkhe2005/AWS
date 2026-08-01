@@ -24,6 +24,19 @@
       tying setup back to Unit 2 hypervisor/Xen/KVM theory
 - [ ] Build Task 2 section of the PPT
 
+## Incidents / gotchas encountered (worth mentioning in the report)
+
+- `pip install -r requirements.txt` (Prophet/cmdstanpy build) OOM-killed the SSH
+  session on t3.micro's 1 GB RAM — fixed by adding a 2 GB swap file.
+- SSH then started timing out entirely — turned out to be Cloudflare WARP VPN
+  (used on college WiFi) constantly changing the effective public IP, so the
+  Security Group's "My IP" SSH rule kept going stale.
+- **TEMP FIX**: SSH (port 22) inbound rule set to `0.0.0.0/0` (anywhere) to
+  unblock development. **TODO before final demo: lock SSH source back down**
+  (either a specific IP with WARP off, or remove the rule and use EC2 Instance
+  Connect / Session Manager instead). Key-based auth only (no password login)
+  limits the real risk in the meantime, but this should not ship open.
+
 ## Notes
 
 - AWS hosting must stay within Free Tier (t2.micro/t3.micro EC2, S3 free tier — no paid services)
