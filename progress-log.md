@@ -10,8 +10,9 @@
 - [x] Stage 1 — IAM: created a non-root IAM user with AdministratorAccess +
       generated a CLI access key pair
 - [x] Stage 2 — Launch EC2 instance (Ubuntu 26.04 LTS, t3.micro, `retail-agentic-ai-backend`)
-- [ ] Stage 3 — Security Groups (firewall rules for the instance)
-- [ ] Stage 4 — SSH in, deploy backend (Python, systemd service, Nginx reverse proxy)
+- [x] Stage 3 — Security Groups (opened HTTP/80 publicly, 8000 temp for testing, SSH stayed IP-locked)
+- [x] Stage 4a — SSH access confirmed (Windows PowerShell + OpenSSH, icacls instead of chmod)
+- [ ] Stage 4b — deploy backend on the instance (Python, systemd service, Nginx reverse proxy)
 - [ ] Stage 5 — S3 + CloudFront for the frontend
 - [ ] Stage 6 — Wire frontend/backend together (CORS, env vars), final test
 - [ ] Fill in the Task 1 tracking sheet (problem statement, platform, hosting link)
