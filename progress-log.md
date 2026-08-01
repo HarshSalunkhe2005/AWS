@@ -36,6 +36,15 @@
   (either a specific IP with WARP off, or remove the rule and use EC2 Instance
   Connect / Session Manager instead). Key-based auth only (no password login)
   limits the real risk in the meantime, but this should not ship open.
+- `pip install` then failed with `OSError: [Errno 122] Disk quota exceeded` while
+  downloading the 223 MB `xgboost` wheel, even with 14G free on `/`. Root cause:
+  pip's temp download directory defaults to `/tmp`, which on this AMI is a
+  **tmpfs** (RAM-backed, capped at 455 MB) — unrelated to real disk space.
+  Fixed by resizing the EBS volume (8G → 20G via Console + `growpart` +
+  `resize2fs`, which also gave breathing room generally) **and** setting
+  `TMPDIR=~/tmp` (a real on-disk directory) before running pip.
+- Net result: backend Python dependencies (FastAPI, XGBoost, Prophet, scikit-learn,
+  mlxtend, etc.) installed successfully in the venv.
 
 ## Notes
 
