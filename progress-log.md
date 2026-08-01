@@ -14,8 +14,9 @@
 - [x] Stage 4a — SSH access confirmed (Windows PowerShell + OpenSSH, icacls instead of chmod)
 - [x] Stage 4b (part 1) — backend running as a systemd service (`retail-backend`),
       confirmed reachable at `http://<public-ip>:8000/health` → `{"status":"ok"}`
-- [ ] Stage 4b (part 2) — Nginx reverse proxy (80 → 8000), so port 8000 doesn't
-      need to stay open publicly
+- [x] Stage 4b (part 2) — Nginx reverse proxy configured (80 → 127.0.0.1:8000),
+      confirmed `http://<public-ip>/health` works without `:8000`; port 8000
+      closed in the Security Group afterward (Nginx is now the only public entry)
 - [ ] Stage 5 — S3 + CloudFront for the frontend
 - [ ] Stage 6 — Wire frontend/backend together (CORS, env vars), final test
 - [ ] Fill in the Task 1 tracking sheet (problem statement, platform, hosting link)
