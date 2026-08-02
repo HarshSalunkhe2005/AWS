@@ -11,8 +11,9 @@ Due: 3rd August 2026 · Case study demo: 4–6 August 2026
 ```
 Task 1 PPT contents/    Task 1 — final PPT-ready content: architecture, full deployment
                          journey (all stages + every incident/fix), and screenshots
-task2-multi-vm/          Task 2 — multi-VM virtualized environment on a single host
-progress-log.md          Running log of what's been done, in order
+Task 2 PPT contents/    Task 2 — final PPT-ready content: title/abstract, architecture
+                         diagram, methodology, demo script, viva Q&A, and build log
+progress-log.md         Running log of what's been done, in order
 ```
 
 ## Task 1 — summary — DONE, working end-to-end
@@ -30,13 +31,18 @@ a static-hosting pattern (S3), one of AWS's public cloud deployment models.
 
 See `Task 1 PPT contents/` for the full writeup and screenshots.
 
-## Task 2 — summary
+## Task 2 — summary — DONE, working end-to-end
 
 **Goal**: minimum 3 cloud instances / VMs virtualized on a single host.
 
+**Built**: 3 Ubuntu VMs on VirtualBox (Type-2 hypervisor) — `rrafin` (VM1, Apache
+web server) + `ubuntu2` and `ubuntu2 Clone` (VM2/VM3, client machines) — networked
+via NAT + Host-only adapters (`192.168.56.0/24`). VM-to-VM communication verified
+with `ping` and cross-VM HTTP requests to VM1's web page.
+
 **Course tie-in (Unit 2)**: hypervisor theory (Type 1 vs Type 2), Xen Dom0/DomU
-architecture, KVM, full vs para-virtualization — directly from the syllabus. See
-`task2-multi-vm/` for how the hands-on VirtualBox/KVM setup maps to these concepts.
+architecture, full vs para-virtualization — directly from the syllabus. See
+`Task 2 PPT contents/` for the full writeup, architecture diagram, and viva prep.
 
 ## Group
 

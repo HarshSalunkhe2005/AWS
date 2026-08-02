@@ -29,9 +29,18 @@
 
 ## Task 2 — Multi-VM Virtualized Environment
 
-- [ ] Not started yet — plan: 3+ VMs on a single host via VirtualBox/KVM,
-      tying setup back to Unit 2 hypervisor/Xen/KVM theory
-- [ ] Build Task 2 section of the PPT
+- [x] VirtualBox installed, 3 Ubuntu Server VMs created: `rrafin` (VM1, web
+      server), `ubuntu2` (VM2, client), `ubuntu2 Clone` (VM3, client)
+- [x] Networking: NAT + Host-only adapters on each VM, private network
+      `192.168.56.0/24`
+- [x] Apache2 installed on VM1, custom page live, confirmed `active (running)`
+- [x] VM-to-VM connectivity verified: `ping` + cross-VM HTTP requests from both
+      VM2 and VM3 to VM1, all successful
+- [x] Task 2 implementation complete. Full writeup, architecture diagram, demo
+      script, viva Q&A in `Task 2 PPT contents/`
+- [ ] Delete orphaned first-attempt VM (`hharsh`) if not already done
+- [ ] Take final screenshots (all 3 VMs running side-by-side, `ip a` per VM)
+- [ ] Build Task 2 section of the PPT (content ready in `Task 2 PPT contents/`)
 
 ## Incidents / gotchas encountered (worth mentioning in the report)
 
